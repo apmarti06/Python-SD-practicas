@@ -42,15 +42,22 @@ def Iniciar_server(direccion, puerto):
             if archivo_existe(filename):
                 sockeT.send(b"Existe")
                 respuesta = sockeT.recv(1024).decode('utf-8').strip()
-                if respuesta != SI:
+                if respuesta != "SI":
                     print("El cliente ")
                     sockeT.close()
                     continue
 
             else:
-                sockeT.send(b"Ok")  
-                
+                sockeT.send(b"Ok")
+            
+            tamano_archivo = int(sockeT.recv(10).decode('utf-8').strip()) #convertimos la info del proceso del socket a entero, para leer bytes (32 bit int)
+            print(f"Tamaño del archivo: {tamano_archivo}")
 
+            # una vez con el tamaño recibimos el archivo del cliente
+            recibir_archivo(sockeT, filename, tamano_archivo)
+            print(f"Archivo {filename} recibido correctamente.")
+
+            sockeT.send(b"Recibido")
 
 
         except Exception as error:
