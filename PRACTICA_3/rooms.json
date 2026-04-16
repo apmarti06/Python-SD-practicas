@@ -15,5 +15,26 @@
             "wifi"
         ],
         "ocupada": true
+    },
+    {
+        "id": 27,
+        "plazas": 23,
+        "equipamiento": [
+            "kisko",
+            "jose",
+            "dani",
+            "alfi"
+        ],
+        "ocupada": true
+    },
+    {
+        "id": 89,
+        "plazas": 2,
+        "equipamiento": [
+            "joselitro",
+            "mesa",
+            "tablet"
+        ],
+        "ocupada": true
     }
 ]
