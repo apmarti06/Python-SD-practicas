@@ -13,3 +13,4 @@ for ruta, directorios, ficheros in os.walk("."):
         total += tamano
 
 print("Tamaño total:", total, "bytes")
+

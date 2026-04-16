@@ -1,0 +1,19 @@
+[
+    {
+        "id": 34,
+        "plazas": 5,
+        "equipamiento": [
+            "camas",
+            "baños"
+        ],
+        "ocupada": false
+    },
+    {
+        "id": 4,
+        "plazas": 7,
+        "equipamiento": [
+            "wifi"
+        ],
+        "ocupada": true
+    }
+]
