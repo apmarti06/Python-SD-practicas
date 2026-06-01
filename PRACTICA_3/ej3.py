@@ -7,7 +7,7 @@ data_file = "rooms.json" # constistencia de la base de datos
 
 #Hacemos cada funcion auxiliar requerida para la persistencia del hotel
 
-#cargamos las habitaciones existentes del hotel
+#cargamos las habitaciones existentes del hotel, a (json->python)
 def cargar_habitaciones(): 
     if not os.path.exists(data_file):
         return [] # no devolvemos ningun dato
@@ -30,7 +30,7 @@ def buscar_habitaciones_id(habitaciones, id):
             return habitacion
     return None 
 
-#vemos si los datos del usuario concuerda con el json (claves)
+#vemos si los datos del usuario concuerda con el json (claves), hay metodos post que no exigen el id
 def validar_habitacion(datos, exigir_id = True):
     if not isinstance(datos, dict): # si los datos no se trata de un diccionario no son válidps
         return False
@@ -39,7 +39,7 @@ def validar_habitacion(datos, exigir_id = True):
     if exigir_id:
         campos.insert(0, "id")
 
-    #prueba que los datos existan
+    #prueba que los datos existan, en el json
     for campo in campos:
         if campo not in datos:
             return False, f"Falta el campo obligatorio: {campo}"
@@ -62,6 +62,7 @@ def validar_habitacion(datos, exigir_id = True):
 
     return True, ""
 
+#para manejar la conversion de datos correctamente
 def respuesta_json(codigo, datos):
     response.content_type = "application/json"
     response.status = codigo

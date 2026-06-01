@@ -1,0 +1,19 @@
+[
+    {
+        "dni": "77639445R",
+        "nombre_completo": "Alfonso Pacheco Marti",
+        "email": "apachecomarti@gmail.com",
+        "departamento": "Departamento de matematicas",
+        "categoria": "PDI",
+        "asignaturas": [
+            "mates"
+        ]
+    },
+    {
+        "dni": "12345678Z",
+        "nombre_completo": "L G R",
+        "email": "pene@gmail.com",
+        "departamento": "sexo",
+        "categoria": "BECARIO"
+    }
+]
